@@ -2,16 +2,16 @@ class Like < ApplicationRecord
   belongs_to :user
   belongs_to :post
 
-  after_save :increment
-  after_destroy :decrement
+  after_save :increment_likes
+  after_destroy :decrement_likes
 
   private
 
-  def increment
+  def increment_likes
     post.increment!(:likes_counter)
   end
 
-  def decrement
+  def decrement_likes
     post.decrement!(:likes_counter)
   end
 end
