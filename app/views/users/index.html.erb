@@ -1,3 +1,5 @@
 <div>
-Here is a list of users
+  <% @users.each do |user| %>
+    <%= user.name %>
+  <% end %>
 </div>

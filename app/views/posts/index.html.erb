@@ -1,3 +1,5 @@
 <div>
-  Here is a list of posts for a given user
+  <% @posts.each do |post| %>
+    <%= post.title %><br>
+  <% end %>
 </div>
