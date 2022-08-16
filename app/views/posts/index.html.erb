@@ -1,5 +1,16 @@
 <div>
+  <%= render 'users/user', user: @user %>
+</div>
+
+<div>
   <% @posts.each do |post| %>
-    <%= post.title %><br>
+    
+    <% post.text = post.text.truncate(48) %>
+    <%= render 'post', post: post %>
+    
+    <% post.recent_comments.each do |comment| %>
+      <%= render 'comments/comment', comment: comment %>
+    <% end %>
+
   <% end %>
 </div>
