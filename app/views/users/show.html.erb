@@ -1,5 +1,5 @@
 <div>
-  <%= render 'user', user: @user %>
+  <%= render @user %>
 </div>
 
 <div class="bio-container">
@@ -7,19 +7,11 @@
   <p><%= @user.bio.truncate(80) %></p>
   
   <div>
-    <% @user.recent_posts.each do |post| %>
-      <% post.text = post.text.truncate(48) %>
-      <%= render 'posts/post', post: post %>
-    <% end %>
+    <%= render @user.recent_posts %>
   </div>
-
-  <%= link_to user_posts_url(@user.id) do%>
-    <form method="post" class="button_to">
-      <button type="submit">See All</button>
-      <input name="authenticity_token" type="hidden" value="10f2163b45388899ad4d5ae948988266befcb6c3d1b2451cf657a0c293d605a6"/>
-    </form> 
-  <%end%>
-
+  
+  <%= render 'show-bttn' %>
+  
 </div>
 
 

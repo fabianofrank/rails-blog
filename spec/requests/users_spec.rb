@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
+  let(:user) { User.create!(name: 'Tom', photo: 'https://i.ibb.co/n6R1Zh1/At-hospital.jpg', bio: 'Hospital.') }
+  
   describe 'GET /index' do
     before(:each) { get users_path } # get(:users)
 
@@ -18,10 +20,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /show' do
-    before(:example) do
-      @user = User.create!(name: 'Tom', photo: 'https://i.ibb.co/n6R1Zh1/At-hospital.jpg', bio: 'Hospital.')
-      get user_path(@user)
-    end
+    before(:each) { get "/users/#{user.id}" } # get(:users)
 
     it 'returns response status success' do
       expect(response).to have_http_status(:ok)
