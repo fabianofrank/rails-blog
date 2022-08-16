@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   let(:user) { User.create!(name: 'Tom', photo: 'https://i.ibb.co/n6R1Zh1/At-hospital.jpg', bio: 'Hospital.') }
-  
+
   describe 'GET /index' do
     before(:each) { get users_path } # get(:users)
 
