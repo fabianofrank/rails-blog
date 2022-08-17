@@ -1,3 +1,22 @@
 <div>
-  <%= @user.name %>
+  <%= render @user %>
 </div>
+
+<div class="bio-container">
+  <h3>Bio</h3>
+  <p><%= @user.bio.truncate(80) %></p>
+  
+  <div>
+    <% @user.recent_posts.each do |post| %>
+      <%= link_to user_post_path(@user.id, post.id) do%>
+        <% post.text = post.text.truncate(48) %>
+        <%= render post %>
+      <% end %>
+    <% end %>
+  </div>
+  
+  <%= render 'show-bttn' %>
+  
+</div>
+
+

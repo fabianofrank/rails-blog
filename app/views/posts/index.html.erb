@@ -1,5 +1,17 @@
 <div>
+  <%= render @user %>
+</div>
+
+<div>
   <% @posts.each do |post| %>
-    <%= post.title %><br>
+    
+    
+    <%= link_to user_post_path(@user.id, post.id) do%>
+      <% post.text = post.text.truncate(48) %>
+      <%= render post %>
+    <% end %>
+
+    <%= render post.recent_comments %>
+
   <% end %>
 </div>
