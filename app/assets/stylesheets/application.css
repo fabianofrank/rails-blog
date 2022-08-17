@@ -43,7 +43,7 @@ a:visited {
 .post-header,
 .bio-container,
 .comments-container > * {
-  background-color:  rgb(196, 56, 56);
+  background-color: rgb(196, 56, 56);
   border-radius: max(0px, min(8px, ((100vw - 4px) - 100%) * 9999)) / 8px;
   padding: 12px;
   margin: 12px;
@@ -64,7 +64,7 @@ a:visited {
 }
 
 .button_to button {
-  color:  rgb(196, 56, 56);
+  color: rgb(196, 56, 56);
   border-radius: max(0px, min(8px, ((100vw - 4px) - 100%) * 9999)) / 8px;
   text-decoration: none;
   border: none;
@@ -74,7 +74,7 @@ a:visited {
 
 .button_to button:hover {
   color: whitesmoke;
-  background-color:  rgba(53, 45, 45, 0.5);
+  background-color: rgba(53, 45, 45, 0.5);
 }
 
 .button_to {
@@ -83,7 +83,7 @@ a:visited {
 }
 
 .post-inner {
-  background-color:  rgba(53, 45, 45, 0.5);
+  background-color: rgba(53, 45, 45, 0.5);
   border-radius: max(0px, min(8px, ((100vw - 4px) - 100%) * 9999)) / 8px;
   padding: 12px;
   margin: 12px;
