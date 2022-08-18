@@ -1,6 +1,13 @@
 <div>
-  <%= render 'posts/post', post: @post %>
+  <%= render @post %>
 </div>
+
+<%= link_to new_user_post_comment_path(@user.id, @post.id) do%>
+  <form method="post" class="button_to">
+    <button type="submit">+</button>
+  </form> 
+<%end%>
+
 <div>
-  <%= render @comments %>
+  <%= render @post.comments %>
 </div>
