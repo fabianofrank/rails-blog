@@ -137,10 +137,20 @@ a:visited {
 
 .post-counters {
   display: flex;
+  align-items: center;
 }
 
 .post-counters > * {
   font-size: 12px;
   padding: 6px;
   margin: 6px;
+  align-items: center;
+}
+
+.like-container {
+  display: flex;
+}
+
+.like-bttn > * {
+  max-width: 24px;
 }

@@ -8,5 +8,9 @@
     <div class='button_to'>
        <%= form.submit "Comment" %>
     </div>
+
+    <div class='button_to'>
+        <%= link_to 'Close', user_post_path(@user.id, @post.id) %>
+    </div>
   </div>
 <% end %>

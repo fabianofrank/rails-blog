@@ -25,7 +25,7 @@
 
     <div class="post-counters">
       <h3>Comments: <%= post.comments_counter %></h3>
-      <h3>Likes: <%= post.likes_counter %></h3>
+      <h3 class="like-container"> <%= render 'likes/like' %> <%= post.likes_counter %></h3>
     </div>
 
   </div>
