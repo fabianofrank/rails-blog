@@ -54,6 +54,7 @@ a:visited {
 
 .post-header {
   min-width: 480px;
+  position: relative;
 }
 
 .fix-header {
@@ -84,8 +85,14 @@ a:visited {
 }
 
 .button_to {
+  color: rgb(196, 56, 56);
   padding: 12px;
   margin: 12px;
+}
+
+.like-container {
+  color: rgb(196, 56, 56);
+  display: flex;
 }
 
 .post-inner {
@@ -147,10 +154,10 @@ a:visited {
   align-items: center;
 }
 
-.like-container {
-  display: flex;
-}
-
 .like-bttn > * {
   max-width: 24px;
+}
+
+.button_to button > * {
+  color: rgb(196, 56, 56);
 }

@@ -2,19 +2,13 @@
   <%= render @user %>
 </div>
 
-<div>
-  <%= render 'bttn-post' %>
-</div>
+<%= link_to new_user_post_path(@user.id) do%>
+  <%= render 'add-button' %>
+<% end %>
 
 <div>
   <% @posts.each do |post| %>
-
-    <%= link_to user_post_path(@user.id, post.id) do%>
-      <% post.text = post.text.truncate(48) %>
-      <%= render post %>
-    <% end %>
-
+    <%= render post %>
     <%= render post.recent_comments %>
-
   <% end %>
 </div>

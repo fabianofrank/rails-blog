@@ -3,9 +3,7 @@
 </div>
 
 <%= link_to new_user_post_comment_path(@user.id, @post.id) do%>
-  <form method="post" class="button_to">
-    <button type="submit">+</button>
-  </form> 
+  <%= render 'add-button' %>
 <%end%>
 
 <div>
@@ -13,5 +11,9 @@
 </div>
 
 <div class='button_to'>
-  <%= link_to 'Close', user_posts_path %>
+
+  <button type="submit">
+    <%= link_to 'Close', user_posts_path %>
+  </button>
+  
 </div>
