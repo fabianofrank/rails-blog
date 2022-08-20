@@ -1,15 +1,33 @@
-<div class="post-header">
-  
-  <div class="post-inner">
-    <h2><%= post.title %></h2>
+<% final_page = current_page?(user_post_path(@user.id, post.id)) %>
 
-    <p><%= post.text %></p>
-  </div>
-  
+<% if final_page %>
+  <div class="post-header fix-header">
 
-  <div class="post-counters">
-    <h3>Comments: <%= post.comments_counter %></h3>
-    <h3>Likes: <%= post.likes_counter %></h3>
-  </div>
+    <div class="post-counters fix-counter ">
+      <h3>Comments: <%= post.comments_counter %></h3>
+      <%=  render 'likes/like', post: post %>
+    </div>
+
+    <div class="post-inner fix-inner ">
+      <h2><%= post.title %> by <%= post.user.name %></h2>
+      <p><%= post.text %></p>
+    </div>
 
   </div>
+<% else %>
+  <div class="post-header">
+    
+    <%= link_to user_post_path(@user.id, post.id) do%>
+      <div class="post-inner">
+        <h2><%= post.title %></h2>
+        <p><%= post.text.truncate(48) %></p>
+      </div>
+    <% end %>
+
+    <div class="post-counters">
+      <h3>Comments: <%= post.comments_counter %></h3>
+      el
+    </div>
+
+  </div>
+<% end %>

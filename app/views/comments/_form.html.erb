@@ -1,0 +1,16 @@
+<%= form_with model:@comment, url: user_post_comments_path, local: true, method: :post do |form| %>  
+  <div class='bttn-container'> 
+    
+    <div class='comment-box'>
+      <%= form.text_field :text, class: "form-text", placeholder: "Write a comment..." %>
+    </div>
+
+    <div class='button_to'>
+       <%= form.submit "Comment" %>
+    </div>
+
+    <div class='button_to'>
+        <%= link_to 'Close', user_post_path(@user.id, @post.id) %>
+    </div>
+  </div>
+<% end %>

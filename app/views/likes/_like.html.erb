@@ -1,0 +1,22 @@
+<% if current_user.likes.find_by(post_id: post.id).nil? %>
+  
+  <%= button_to user_post_likes_path(@user.id, post.id), method: :post do %>
+    <div class="like-container">
+      <div class="like-bttn">
+        <%= image_tag("heart.png", :alt => "like button") %>
+      </div>
+      <%= post.likes_counter %>
+  <%end%>
+  
+<% else %>
+  
+  <%= button_to user_post_like_path(@user.id, post.id), method: :delete do %>
+    <div class="like-container">
+      <div class="like-bttn">
+        <%= image_tag("heart.png", :alt => "like button") %>
+      </div>
+        <%= post.likes_counter %>
+    </div>
+  <%end%>
+
+<% end %>

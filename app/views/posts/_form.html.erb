@@ -1,0 +1,20 @@
+<%= form_with model:@post, url: user_posts_path(:user_id), local: true, method: :post do |form| %>  
+  <div class='bttn-container'> 
+    
+    <div class='title-box'>
+      <%= form.text_field :title, class: "form-title", placeholder: "Post title..." %><br>
+    </div>
+    
+    <div class='comment-box'>
+      <%= form.text_field :text, class: "form-text", placeholder: "What are you thinking?" %>
+    </div>
+
+    <div class='button_to'>
+       <%= form.submit "Publish" %>
+    </div>
+
+     <div class='button_to'>
+        <%= link_to 'Close', user_posts_path %>
+    </div>
+  </div>
+<% end %>
