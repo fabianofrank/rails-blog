@@ -5,13 +5,7 @@
 
     <div class="post-counters fix-counter ">
       <h3>Comments: <%= post.comments_counter %></h3>
-
-      <%= button_to user_post_likes_path(@user.id, post.id) do %>
-        <div class="like-container">
-          <%= render 'likes/like', method: :post %>
-          <%= post.likes_counter %>
-        </div>
-      <%end%>
+      <%=  render 'likes/like', post: post %>
     </div>
 
     <div class="post-inner fix-inner ">
@@ -32,13 +26,7 @@
 
     <div class="post-counters">
       <h3>Comments: <%= post.comments_counter %></h3>
-
-      <%= button_to user_post_likes_path(@user.id, post.id) do %>
-        <div class="like-container">
-          <%= render 'likes/like', method: :post %>
-          <%= post.likes_counter %>
-        </div>
-      <%end%>
+      el
     </div>
 
   </div>

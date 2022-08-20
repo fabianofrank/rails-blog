@@ -1,12 +1,12 @@
 class LikesController < ApplicationController
   def create
     @like = current_user.likes.new(post_id: params[:post_id])
-    @like.save
+    flash[:error] = '...with problems, try again...' unless @like.save
     redirect_to request.referrer
   end
 
   def destroy
-    @like = Like.find(params[:id])
+    @like = current_user.likes.find_by(post_id: params[:post_id])
     @like.destroy
     redirect_to request.referrer
   end
@@ -14,6 +14,6 @@ class LikesController < ApplicationController
   private
 
   def like_params
-    params.require(:like).permit(:user_id, :post_id)
+    params.require(:like).permit(:post_id)
   end
 end
