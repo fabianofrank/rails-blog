@@ -4,7 +4,7 @@ require_relative '../config/environment'
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-require "capybara/rspec"
+require 'capybara/rspec'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -26,6 +26,6 @@ RSpec.configure do |config|
 end
 
 # JS tests run only inside of:
-#RSpec.describe "Signing in", js: true do
-  # tests that actually execute JavaScript
-#end
+# RSpec.describe "Signing in", js: true do
+# tests that actually execute JavaScript
+# end

@@ -6,7 +6,7 @@ RSpec.describe Post, type: :model do
                      Sed in mi ac lacus fermentum malesuada at non nunc.')
   subject do
     Post.create(user: user, title: 'YOW!',
-             text: 'Fusce vel leo nulla. Morbi sit amet ornare metus, a efficitur turpis.
+                text: 'Fusce vel leo nulla. Morbi sit amet ornare metus, a efficitur turpis.
              Aenean hendrerit leo a urna imperdiet.')
   end
 
