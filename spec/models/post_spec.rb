@@ -5,10 +5,9 @@ RSpec.describe Post, type: :model do
                      bio: 'Engineer from Brazil. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                      Sed in mi ac lacus fermentum malesuada at non nunc.')
   subject do
-    Post.new(user: user, title: 'YOW!',
+    Post.create(user: user, title: 'YOW!',
              text: 'Fusce vel leo nulla. Morbi sit amet ornare metus, a efficitur turpis.
-             Aenean hendrerit leo a urna imperdiet, sit amet egestas enim convallis.
-             Duis dictum ex enim, quis varius metus convallis in.')
+             Aenean hendrerit leo a urna imperdiet.')
   end
 
   before { subject.save }
