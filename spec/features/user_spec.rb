@@ -8,7 +8,7 @@ RSpec.describe 'Users', type: :feature do
     end
 
     before :each do
-      User.create!(name: 'Tom', photo: 'https://i.ibb.co/n6R1Zh1/At-hospital.jpg', bio: 'Hospital.')
+      @user = User.create!(name: 'Tom', photo: 'https://i.ibb.co/n6R1Zh1/At-hospital.jpg', bio: 'Hospital.')
       visit users_path(@user)
     end
 
@@ -24,9 +24,9 @@ RSpec.describe 'Users', type: :feature do
       expect(page).to have_content('0')
     end
 
-    it 'to  click on a user and redirect to that user\'s show page' do
+    it 'to click on a user and redirect to that user\'s show page' do
       click_link 'Tom'
-      expect(page).to have_content('Tom')
+      expect(page).to have_current_path(user_path(@user.id))
     end
   end
 
@@ -73,7 +73,7 @@ RSpec.describe 'Users', type: :feature do
     end
 
     it 'to click to see all posts, it redirects me to the user\'s post\'s index page' do
-      click_link 'See all'
+      click_link 'See All'
       expect(page).to have_current_path(user_posts_path(@user.id))
     end
   end
