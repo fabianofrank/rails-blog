@@ -10,7 +10,7 @@ RSpec.describe 'Posts', type: :feature do
     before :each do
       @user = User.create!(name: 'Tom', photo: 'https://i.ibb.co/n6R1Zh1/At-hospital.jpg', bio: 'Hospital.')
       @post = Post.create(user: @user, title: 'The ephicacy of things', text: 'Wow the ephicacy of things',
-        comments_counter: 0, likes_counter: 0)
+                          comments_counter: 0, likes_counter: 0)
       Comment.create(user: @user, post: @post, text: 'Hi Frank!')
       visit user_posts_path(@user.id)
     end
