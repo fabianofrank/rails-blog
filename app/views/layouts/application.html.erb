@@ -11,8 +11,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="nav-bar">
+      <% if user_signed_in? %>
+      <%= link_to "Home", users_path %>
+      <p><%= current_user.name %></p>
+      <%= button_to "Sign out", destroy_user_session_path, :method => :delete, data:{turbo:false} %>
+      <% end %>
+    </div>
     <p class="notice"><%=notice %></p>
     <p class="alert"><%=alert %></p>
+    <%= yield %>
   </body>
 </html>
