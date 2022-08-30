@@ -13,8 +13,8 @@
   <body>
     <div class="nav-bar">
       <% if user_signed_in? %>
-      <%= link_to "Home", users_path %>
-      <p><%= current_user.name %></p>
+        <p class="home"><%= link_to "Home", users_path %></p>
+        <p><%= current_user.name %></p>
       <%= button_to "Sign out", destroy_user_session_path, :method => :delete, data:{turbo:false} %>
       <% end %>
     </div>
