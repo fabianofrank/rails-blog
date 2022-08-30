@@ -6,7 +6,7 @@
   
   <h3>Bio</h3>
   
-  <p><%= @user.bio.truncate(80) %></p>
+  <p><%= @user.bio %></p>
   
   <div>
     <% @user.recent_posts.each do |post| %>
