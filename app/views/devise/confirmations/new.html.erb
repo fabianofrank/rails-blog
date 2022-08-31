@@ -1,0 +1,17 @@
+<div class="auth-container">
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field title-box">
+      <%= f.email_field :email, placeholder: "email", autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+    </div>
+
+    <div class="actions button_to">
+      <%= f.submit "Resend confirmation instructions" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="comments-container">
+  <%= render "devise/shared/links" %>
+</div>
