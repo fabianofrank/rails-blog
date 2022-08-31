@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
@@ -14,5 +14,9 @@ class User < ApplicationRecord
 
   def recent_posts
     posts.last(2)
+  end
+
+  def admin?
+    role == 'admin'
   end
 end
