@@ -3,12 +3,16 @@
 </div>
 
 <%= link_to new_user_post_path(@user.id) do%>
-  <%= render 'add-button' %>
+  <%= render 'button-plus' %>
 <% end %>
 
 <div>
   <% @posts.each do |post| %>
-    <%= render post %>
-    <%= render post.recent_comments %>
+    <div class="fix-header">
+      <%= render post %>
+    </div>
+    <div>
+      <%= render post.recent_comments, post: post %>
+    </div>
   <% end %>
 </div>

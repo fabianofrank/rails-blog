@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
-    @post = Post.find_by(id: params[:post_id])
-    @user = User.find_by(id: params[:user_id])
+    @post = Post.find(params[:post_id])
+    @user = User.find(params[:user_id])
   end
 
   def create
@@ -16,6 +16,12 @@ class CommentsController < ApplicationController
       flash[:error] = '...with problems, try again...'
       render :new
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy!
+    redirect_to request.referrer
   end
 
   private

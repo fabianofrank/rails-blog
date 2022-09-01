@@ -6,9 +6,9 @@
   
   <h3>Bio</h3>
   
-  <p><%= @user.bio %></p>
+  <p><%= @user.bio %></p>  <%# text[0..100] %>
   
-  <div>
+  <div class="contain-post">
     <% @user.recent_posts.each do |post| %>
         <%= render post %>
     <% end %>

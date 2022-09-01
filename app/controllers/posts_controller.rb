@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find_by(id: params[:user_id])
+    @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments, :likes)
   end
 
   def show
-    @post = Post.includes(:comments, :likes).find_by(id: params[:id])
-    @user = User.find_by(id: params[:user_id])
+    @post = Post.includes(:comments, :likes).find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
   def new
@@ -23,6 +23,12 @@ class PostsController < ApplicationController
       flash[:error] = '...with problems, try again...'
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.includes(:comments, :likes).find_by(id: params[:id])
+    @post.destroy
+    redirect_to user_posts_path(current_user.id)
   end
 
   private

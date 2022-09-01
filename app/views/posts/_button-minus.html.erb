@@ -1,0 +1,9 @@
+
+  <% if can? :destroy, current_user.comments.find_by(post_id: @post.id) %>
+    <%= button_to "-", user_post_comment_path(@user.id, @post.id, current_user.comments.find_by(post_id: @post.id)), method: :delete %>
+  <% end %>
+
+
+
+
+

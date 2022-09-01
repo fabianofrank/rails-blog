@@ -57,13 +57,24 @@ a:visited {
   max-width: 828px;
 }
 
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.comments {
+  display: flex;
+  align-items: center;
+}
+
 .auth-container {
   min-width: 0;
 }
 
 .post-header {
   min-width: 480px;
-  position: relative;
 }
 
 .fix-header {
@@ -74,7 +85,7 @@ a:visited {
 .comments-container > * {
   font-size: 12px;
   border-top-left-radius: 0;
-  min-width: 240px;
+  min-width: 480px;
   max-width: 480px;
   margin-left: 48px;
 }
