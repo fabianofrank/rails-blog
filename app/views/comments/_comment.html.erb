@@ -1,4 +1,28 @@
-<div class='comments-container'>
-  <p> <%= comment.user.name %><br><br>
-  <%= comment.text %></p>
+<% final_page = current_page?(user_post_path(@user.id, post.id)) %>
+
+<% if final_page %>
+
+<div>
+  <div class="comments">
+    <div class='comments-container'>
+      <p> <%= comment.user.name %><br><br>
+      <%= comment.text %></p>
+    </div>
+    <div>
+      <%= render 'button-minus' %>
+    </div>
+  </div>
 </div>
+
+<% else %>
+
+  <div>
+    <div class="comments">
+      <div class='comments-container'>
+        <p> <%= comment.user.name %><br><br>
+        <%= comment.text %></p>
+      </div>
+    </div>
+  </div>
+
+<% end %>

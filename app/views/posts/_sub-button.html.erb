@@ -1,9 +1,0 @@
-<% @comments.each do |comment| %>
-  <% if can? :destroy, comment %>
-    <%= button_to "-", user_post_comment_path(@user.id, @post.id, comment.id), method: :delete %>
-  <% end %>
-<% end %>
-
-
-
-

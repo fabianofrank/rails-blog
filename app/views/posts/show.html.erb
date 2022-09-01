@@ -3,19 +3,17 @@
 </div>
 
 <div>
-  <%= render @post.comments %>
+  <%= render @post.comments, post: @post %>
 </div>
 
 <div class="buttons">
   <%= link_to new_user_post_comment_path(@user.id, @post.id) do%>
-    <%= render 'add-button' %>
+    <%= render 'button-plus' %>
   <%end%>
 
-  <%= render 'sub-button' %>
-</div>
-
-<div class='button_to'>
-  <button type="submit">
-    <%= link_to 'Close', user_posts_path %>
-  </button>
+  <div class='button_to'>
+    <button type="submit">
+      <%= link_to 'Close', user_posts_path %>
+    </button>
+  </div>
 </div>

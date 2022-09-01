@@ -59,7 +59,14 @@ a:visited {
 
 .buttons {
   display: flex;
-  justify-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.comments {
+  display: flex;
+  align-items: center;
 }
 
 .auth-container {
