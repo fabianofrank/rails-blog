@@ -1,6 +1,4 @@
 class Api::V1::CommentsController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
   def index
     @comments = Post.find(params[:post_id]).comments
     render json: @comments
