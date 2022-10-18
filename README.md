@@ -6,8 +6,14 @@ A **Blog app** similar classic blog website. With fully functional website that 
  - **Comment**
  - **Like** 
 
+## Screenshots
+![space_mock4](https://user-images.githubusercontent.com/68971295/196533102-f64c38c1-2001-4d2c-b261-3e24b5cd09b2.png)
+![blog_mock1](https://user-images.githubusercontent.com/68971295/196532663-30ddc02d-0050-4569-ba80-20c536f63462.png)
+![space_mock2](https://user-images.githubusercontent.com/68971295/196532614-6ef01be3-f741-457c-830d-4f7261f1c18d.png)
 
-Everything will be based on the ERD class diagram presented below. 
+
+
+Everything was based on the ERD class diagram presented below. 
 
 </br>
  <div align="center">
